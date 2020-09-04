@@ -712,4 +712,3 @@ startButton.addEventListener('click',()=>{
     flappyGame.setBirdsNames(playerOneName.value,playerTwoName.value);
 });
 
-//a
