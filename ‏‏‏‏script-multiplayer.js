@@ -282,8 +282,8 @@ function difficultyLevels(){
 
 
 function flappyBirdGame(){
-    let bird=new Bird(40,55,150,100);
-    let birdTwo=new Bird(40,55,150,100);
+    let playerOneBird=new Bird(40,55,150,100);
+    let playerTwoBird=new Bird(40,55,150,100);
     let floor=new continuousFloor();
     let firstPipesPair=new pairOfPipes(200);
     let secondPipesPair=new pairOfPipes(200,280);
@@ -302,8 +302,8 @@ function flappyBirdGame(){
     }
     function startInterval(){
         c.clearRect(0,0,canvas.width,canvas.height);
-        bird.newStartAnimation();
-        birdTwo.newStartAnimation();
+        playerOneBird.newStartAnimation();
+        playerTwoBird.newStartAnimation();
         floor.newPos();
         floor.update();
         drawScore(openingTimer);
@@ -335,11 +335,11 @@ function flappyBirdGame(){
     }
     function flyOnLeftCtrl(event){
         if(event.code==='ControlLeft')
-            bird.flyUp();
+            playerOneBird.flyUp();
     }
     function flyOnRightCtrl(event) {
         if(event.code==='ControlRight')
-            birdTwo.flyUp();
+            playerTwoBird.flyUp();
     }
     
     function autoFly(bird,firstPipesPair,secondPipesPair){
@@ -395,10 +395,10 @@ function flappyBirdGame(){
     }
     function updateGame() {
         c.clearRect(0,0,canvas.width,canvas.height);
-        bird.newPos();
-        bird.update();
-        birdTwo.newPos();
-        birdTwo.update();
+        playerOneBird.newPos();
+        playerOneBird.update();
+        playerTwoBird.newPos();
+        playerTwoBird.update();
         firstPipesPair.update();
         secondPipesPair.update();
         floor.update();
@@ -416,16 +416,16 @@ function flappyBirdGame(){
         
 
         if(!status.isGameOver){
-            if(isGameOver(bird,firstPipesPair,floor)||isGameOver(bird,secondPipesPair,floor)){
-                bird.gravitySpeed=2;
+            if(isGameOver(playerOneBird,firstPipesPair,floor)||isGameOver(playerOneBird,secondPipesPair,floor)){
+                playerOneBird.gravitySpeed=2;
                 status.isGameOver=true;
-                status.winnerName=birdTwo.name;
+                status.winnerName=playerTwoBird.name;
                 
                 gameState.freeze();
             }
-            else if(isGameOver(birdTwo,firstPipesPair,floor)||isGameOver(birdTwo,secondPipesPair,floor)){
-                birdTwo.gravitySpeed=2;
-                status.winnerName=bird.name;
+            else if(isGameOver(playerTwoBird,firstPipesPair,floor)||isGameOver(playerTwoBird,secondPipesPair,floor)){
+                playerTwoBird.gravitySpeed=2;
+                status.winnerName=playerOneBird.name;
                 
                 status.isGameOver=true;
                 gameState.freeze();
@@ -439,17 +439,17 @@ function flappyBirdGame(){
         
             firstPipesPair.update();
             secondPipesPair.update();
-            bird.newPos();
-            bird.update();
-            birdTwo.newPos();
-            birdTwo.update();
+            playerOneBird.newPos();
+            playerOneBird.update();
+            playerTwoBird.newPos();
+            playerTwoBird.update();
             floor.update();
 
             //drawGameConclusion(status.points,status.bestScore);
             drawRestartButton();
             drawWinnerWindow(status);
 
-            if(isBirdTouchedFloor(bird.locationY,bird.height,floor.getFloorY())){
+            if(isBirdTouchedFloor(playerOneBird.locationY,playerOneBird.height,floor.getFloorY())){
                 gameState.end();
             }
                 
@@ -625,8 +625,8 @@ function flappyBirdGame(){
             window.removeEventListener('click',startNewGame);
             window.removeEventListener('keydown',startNewGame);
             
-            bird=new Bird(40,55,150,289,bird.name);
-            birdTwo=new Bird(40,55,150,271,birdTwo.name);
+            playerOneBird=new Bird(40,55,150,289,playerOneBird.name);
+            playerTwoBird=new Bird(40,55,150,271,playerTwoBird.name);
             floor=new continuousFloor();
             
 
@@ -680,8 +680,8 @@ function flappyBirdGame(){
 
 
     this.setBirdsNames=function(nameOne,nameTwo){
-        bird.setName(nameOne);
-        birdTwo.setName(nameTwo);
+        playerOneBird.setName(nameOne);
+        playerTwoBird.setName(nameTwo);
     }
     this.start=function(){gameState.init()} ;
 }
