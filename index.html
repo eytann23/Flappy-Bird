@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    
+    <title>Flappy Bird</title>
+</head>
+<body>
+    <div id='game-screen'>
+        <!-- <canvas id="mycanvas" width="255px" height="255px" border-width="1px" style="border:1px solid black"></canvas> -->
+    </div>
+
+    <canvas id="gameCanvas" width="480px" height="640px" border-width="1px" style="border:1px solid black"></canvas>
+
+    
+
+    <div id='players-name'>
+    </br></br></br>
+        <div class="player-label">Player A: <span class='key-label'>(L-Ctrl)</span></div>
+        <input type="text" class='name-input' id='player-one'/>
+        <div class="player-label">Player B: <span class='key-label'>(R-Ctrl)</span></div>
+        <input type="text" class='name-input' id='player-two'/></br>
+        <button id='start-button' disabled='true'>Start</button>
+    </div>
+    
+    <div id='difficulty-buttons'>
+        <button class="difficulty-button" id="1">EASY</button>
+        <button class="difficulty-button difficulty-selection" id="2">NORMAL</button>
+        <button class="difficulty-button" id="3">HARD</button>
+    </div>
+    
+
+    <script src="./‏‏‏‏script-multiplayer.js"></script>
+</body>
+</html>

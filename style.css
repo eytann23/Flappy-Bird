@@ -1,0 +1,85 @@
+#gameCanvas{
+     background-image: url('./sources/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#difficulty-buttons{
+    width: 480px;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.difficulty-button{
+    height: 40px;
+    background-color: #cfc986;
+}
+.difficulty-button:hover:enabled{
+    cursor: pointer;
+    background-color: #e0ddbd;
+}
+
+.difficulty-selection{
+    background-color: #e7e5c8;
+}
+
+#players-name{
+    margin-top: 5px;
+    width:480px;
+    height:640px;
+    border:1px solid black;
+    background-image: url('./sources/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+}
+
+.name-input{
+    width: 40%;
+    font-size: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.player-label{
+    font-family: 'Flappy';
+    font-size: 60px;
+}
+
+#start-button{
+    margin-top:10px;
+    height: 50px;
+    width: 70px;
+    border-color: white;
+    font-size: large;
+    font-family:'Roboto',sans-serif;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+    
+}
+#start-button:hover:enabled{
+    cursor: pointer;
+    /* background: rgba(89, 240, 51, 0.7); */
+    background-color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    border-color: #1f1f1f;
+}
+
+.key-label{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: small;
+}
+
+
+
+
+@font-face {
+    font-family: "Flappy";
+    src: url(./sources/FlappyBirdy.ttf);
+}
